@@ -17,18 +17,12 @@ LABEL org.label-schema.name="ZoneMinder" \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.schema-version="1.0"
 
-# Define the ENV variable for creating docker image
-ENV ZM_VOL=/srv/apps/zm 
-
 # Install ZoneMinder
 RUN apk update && \
     apk add --no-cache zoneminder
 
 # Add files
 ADD /root /
-
-# Define Volumes
-VOLUME [ "" ]
 
 # Ports configuration
 EXPOSE 80
